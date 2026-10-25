@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LulaDec — Invitaciones Virtuales Elegantes</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- 
+      ======================================================================
+      GUÍA DE PERSONALIZACIÓN PARA LULADEC
+      ======================================================================
+      
+      1. ¿CÓMO CAMBIAR LOS COLORES PRINCIPALES?
+         En el bloque 'tailwind.config' de abajo, puedes modificar los códigos hexadecimales:
+         - 'celeste': Color principal fresco/moderno (ej. #7dd3fc, #38bdf8).
+         - 'sand': Tono arena de fondo cálido/sofisticado (ej. #fefbe8, #f5f0eb).
+         - 'gold': Acento dorado para dar elegancia (ej. #d4af37, #c5a059).
+
+      2. ¿CÓMO CAMBIAR LAS FUENTES (TIPOGRAFÍAS)?
+         En el <head> importamos Google Fonts. Si deseas cambiar las fuentes:
+         - Cambia los enlaces de Google Fonts arriba.
+         - En 'fontFamily' abajo reemplaza '"Outfit"' o '"Playfair Display"' por tu fuente elegida.
+
+      3. CONFIGURACIÓN DEL NÚMERO DE WHATSAPP:
+         Busca la variable 'PHONE_NUMBER' en el <script> al final de la página.
+      ======================================================================
+    -->
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        celeste: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            200: '#bae6fd',
+                            500: '#38bdf8',
+                            600: '#0284c7',
+                            700: '#0369a1',
+                        },
+                        sand: {
+                            50: '#fdfbf7',
+                            100: '#f7f2ea',
+                            200: '#ebe1d3',
+                            300: '#dccab3',
+                            800: '#574835',
+                            900: '#382e21'
+                        },
+                        gold: {
+                            400: '#e6c875',
+                            500: '#d4af37',
+                            600: '#b89320',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Outfit"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .bg-pattern {
+            background-color: #f7f2ea;
+            background-image: radial-gradient(#d4af37 0.5px, transparent 0.5px), radial-gradient(#0284c7 0.5px, #f7f2ea 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-opacity: 0.1;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #b89320 0%, #e6c875 50%, #b89320 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(56, 189, 248, 0.1), 0 8px 10px -6px rgba(212, 175, 55, 0.05);
+        }
+    </style>
+</head>
+<body class="font-sans text-sand-900 bg-sand-50 min-h-screen">
+
+    <!-- Navegación -->
+    <header class="sticky top-0 z-40 bg-sand-50/90 backdrop-blur-md border-b border-sand-200">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-celeste-500 via-gold-500 to-sand-200 p-0.5 flex items-center justify-center shadow-md">
+                    <div class="w-full h-full bg-sand-50 rounded-full flex items-center justify-center">
+                        <span class="font-serif text-xl font-bold text-celeste-600">L</span>
+                    </div>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-2xl font-bold tracking-tight text-sand-900">Lula<span class="gold-gradient-text">Dec</span></span>
+                    <span class="text-[10px] tracking-widest uppercase text-celeste-700 font-semibold -mt-1">Invitaciones Digitales</span>
+                </div>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-sand-800">
+                <a href="#promocion" class="hover:text-celeste-600 transition-colors">Oferta Especial</a>
+                <a href="#ventajas" class="hover:text-celeste-600 transition-colors">¿Qué incluye?</a>
+                <a href="#ejemplos" class="hover:text-celeste-600 transition-colors">Diseños</a>
+                <a href="#cotizador" class="hover:text-celeste-600 transition-colors">Cotizador</a>
+            </nav>
+
+            <a href="https://wa.me/5215512345678?text=Hola,%20quiero%20mas%20informacion%20sobre%20las%20invitaciones%20virtuales" 
+               target="_blank" 
+               class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-celeste-600 hover:bg-celeste-700 text-white font-medium text-sm shadow-md shadow-celeste-500/20 transition-all">
+                <i class="fa-brands fa-whatsapp text-lg"></i> Contactar
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-12 pb-20 px-4 sm:px-6 max-w-6xl mx-auto text-center relative">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-celeste-100 border border-celeste-200 text-celeste-700 font-semibold text-xs tracking-wide uppercase mb-6">
+            <i class="fa-solid fa-sparkles text-gold-500"></i> Diseño Elegante & Exclusivo
+        </div>
+        
+        <h1 class="font-serif text-4xl sm:text-6xl font-bold text-sand-900 leading-tight mb-6 max-w-4xl mx-auto">
+            Invitaciones Virtuales que <span class="gold-gradient-text">enamoran</span> a tus invitados
+        </h1>
+        
+        <p class="text-lg sm:text-xl text-sand-800 mb-8 max-w-2xl mx-auto font-light leading-relaxed">
+            Ahorra dinero y sorprende a todos en tus **XV Años, Bodas o Cumpleaños** con una experiencia digital interactiva directo en su celular.
+        </p>
+
+        <!-- Banner de Promoción -->
+        <div id="promocion" class="max-w-xl mx-auto mb-10 p-6 rounded-3xl bg-gradient-to-br from-celeste-500 to-celeste-700 text-white shadow-xl relative overflow-hidden border-2 border-gold-400/50">
+            <div class="absolute -right-10 -bottom-10 w-32 h-32 bg-gold-500/20 rounded-full blur-2xl"></div>
+            <span class="inline-block px-3 py-1 rounded-full bg-gold-500 text-sand-900 font-bold text-xs uppercase tracking-wider mb-2">Promoción de Lanzamiento</span>
+            <div class="text-3xl sm:text-4xl font-extrabold font-serif mb-1">$349 <span class="text-lg font-normal text-celeste-100">MXN</span></div>
+            <p class="text-xs text-celeste-100 font-light mb-4">Ahorra más del 70% comparado con invitaciones de papel tradicionales.</p>
+            <a href="#cotizador" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-sand-50 text-sand-900 font-bold text-sm shadow-md hover:bg-white transition-all">
+                <i class="fa-solid fa-bolt text-gold-500"></i> ¡Aprovechar Promoción!
+            </a>
+        </div>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto">
+            <a href="#cotizador" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-celeste-600 text-white font-semibold shadow-lg shadow-celeste-500/20 hover:bg-celeste-700 transition-all flex items-center justify-center gap-2">
+                <i class="fa-solid fa-calculator"></i> Cotizar en Vivo
+            </a>
+            <a href="#ventajas" class="w-full sm:w-auto px-8 py-4 rounded-2xl bg-white border border-sand-200 text-sand-800 font-semibold hover:bg-sand-100 transition-all flex items-center justify-center gap-2 shadow-sm">
+                <i class="fa-solid fa-circle-info text-celeste-600"></i> Ver Características
+            </a>
+        </div>
+    </section>
+
+    <!-- Características -->
+    <section id="ventajas" class="py-16 px-4 sm:px-6 bg-sand-100/60 border-y border-sand-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand-900 mb-4">Todo lo que tus invitados necesitan</h2>
+                <p class="text-sand-800">Olvídate de las listas perdidas. Todo organizado de forma moderna y accesible.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="p-8 rounded-3xl bg-sand-50 border border-sand-200 card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-celeste-100 text-celeste-600 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">Confirmación por WhatsApp</h3>
+                    <p class="text-sm text-sand-800 leading-relaxed">Tus invitados confirman asistencia con un solo toque y recibes el mensaje directo en tu teléfono.</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="p-8 rounded-3xl bg-sand-50 border border-sand-200 card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-gold-400/20 text-gold-600 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">Ubicación GPS</h3>
+                    <p class="text-sm text-sand-800 leading-relaxed">Botones directos a Google Maps o Waze para la iglesia y la recepción. ¡Nadie se perderá!</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="p-8 rounded-3xl bg-sand-50 border border-sand-200 card-shadow">
+                    <div class="w-12 h-12 rounded-2xl bg-celeste-100 text-celeste-600 flex items-center justify-center text-xl font-bold mb-6">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+                    <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">Cuenta Regresiva</h3>
+                    <p class="text-sm text-sand-800 leading-relaxed">Reloj interactivo en tiempo real que aumenta la emoción conforme se acerca el gran día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Muestras de Eventos -->
+    <section id="ejemplos" class="py-16 px-4 sm:px-6 max-w-6xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-12">
+            <h2 class="font-serif text-3xl sm:text-4xl font-bold text-sand-900 mb-4">Especialistas en cada Celebración</h2>
+            <p class="text-sand-800">Adaptamos los tonos, tipografías y estética según la temática de tu evento.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-6 rounded-3xl bg-white border border-sand-200 text-center shadow-sm">
+                <div class="w-16 h-16 mx-auto rounded-full bg-celeste-100 text-celeste-600 flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-crown"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">XV Años</h3>
+                <p class="text-xs text-sand-800 mb-4">Elegante, moderno y juvenil con opción a sobre interactivo.</p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-sand-200 text-center shadow-sm">
+                <div class="w-16 h-16 mx-auto rounded-full bg-gold-400/20 text-gold-600 flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-ring"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">Bodas</h3>
+                <p class="text-xs text-sand-800 mb-4">Estilo sofisticado, itinerario de boda y mesa de regalos.</p>
+            </div>
+
+            <div class="p-6 rounded-3xl bg-white border border-sand-200 text-center shadow-sm">
+                <div class="w-16 h-16 mx-auto rounded-full bg-celeste-100 text-celeste-600 flex items-center justify-center text-2xl mb-4">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+                <h3 class="font-serif text-xl font-bold text-sand-900 mb-2">Cumpleaños</h3>
+                <p class="text-xs text-sand-800 mb-4">Diseños dinámicos e instructivos para fiestas inolvidables.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cotizador Dinámico -->
+    <section id="cotizador" class="py-16 px-4 sm:px-6 max-w-3xl mx-auto">
+        <div class="bg-white p-8 sm:p-10 rounded-3xl border border-sand-200 shadow-xl relative overflow-hidden">
+            <div class="text-center mb-8">
+                <span class="text-xs font-bold uppercase tracking-wider text-celeste-700">Cotización en Tiempo Real</span>
+                <h2 class="font-serif text-3xl font-bold text-sand-900 mt-1">Personaliza tu Pedido</h2>
+            </div>
+
+            <form id="calculatorForm" onchange="calculateTotal()" class="space-y-6">
+                <div>
+                    <label class="block text-xs font-bold uppercase text-sand-800 mb-2">1. Tipo de Evento</label>
+                    <select id="eventType" class="w-full p-3.5 rounded-xl border border-sand-200 bg-sand-50 text-sm focus:outline-none focus:ring-2 focus:ring-celeste-500">
+                        <option value="XV Años">XV Años</option>
+                        <option value="Boda">Boda</option>
+                        <option value="Cumpleaños">Cumpleaños / Aniversario</option>
+                        <option value="Bautizo / Primera Comunión">Bautizo / Primera Comunión</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-sand-800 mb-2">2. Paquete Base</label>
+                    <div class="p-4 rounded-2xl border-2 border-celeste-500 bg-celeste-50/50 flex items-center justify-between">
+                        <div>
+                            <span class="block text-sm font-bold text-sand-900">Plan Promocional LulaDec</span>
+                            <span class="text-xs text-sand-800">Incluye RSVP WhatsApp, GPS, Cuenta regresiva y Dress code</span>
+                        </div>
+                        <span class="text-xl font-extrabold font-serif text-celeste-700">$349 MXN</span>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold uppercase text-sand-800 mb-2">3. Agrega extras opcionales</label>
+                    <div class="space-y-3">
+                        <label class="flex items-center justify-between p-3.5 rounded-xl bg-sand-50 border border-sand-200 cursor-pointer text-sm">
+                            <span class="text-sand-900"><i class="fa-solid fa-music text-gold-500 mr-2"></i> Música de Fondo Personalizada</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-sand-800">+$100 MXN</span>
+                                <input type="checkbox" id="extraMusic" value="100" class="accent-celeste-600 w-4 h-4">
+                            </div>
+                        </label>
+                        <label class="flex items-center justify-between p-3.5 rounded-xl bg-sand-50 border border-sand-200 cursor-pointer text-sm">
+                            <span class="text-sand-900"><i class="fa-solid fa-images text-celeste-600 mr-2"></i> Galería de Fotos (3 a 5 fotos)</span>
+                            <div class="flex items-center gap-2">
+                                <span class="text-xs text-sand-800">+$100 MXN</span>
+                                <input type="checkbox" id="extraGallery" value="100" class="accent-celeste-600 w-4 h-4">
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-sand-100/80 border border-sand-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <span class="text-xs font-bold text-sand-800 uppercase">Total Estimado</span>
+                        <div id="totalPrice" class="text-3xl font-extrabold text-sand-900 font-serif">$349 MXN</div>
+                    </div>
+                    <button type="button" onclick="sendOrderWhatsApp()" class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-sm shadow-md transition-all flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-lg"></i> Ordenar por WhatsApp
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer con Botón Directo -->
+    <footer class="py-12 bg-sand-900 text-sand-200 text-center text-xs border-t border-gold-500/30">
+        <div class="max-w-4xl mx-auto px-4 space-y-6">
+            <h3 class="font-serif text-2xl font-bold text-white">Lula<span class="text-gold-400">Dec</span></h3>
+            <p class="text-sand-300 max-w-md mx-auto">Diseños web exclusivos para eventos especiales. Haz que tu celebración comience desde la invitación.</p>
+            
+            <!-- Botón directo de WhatsApp solicitado -->
+            <div class="pt-2">
+                <a href="https://wa.me/5215512345678?text=Hola,%20quiero%20mas%20informacion%20sobre%20las%20invitaciones%20virtuales" 
+                   target="_blank" 
+                   class="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm shadow-lg transition-all transform hover:-translate-y-1">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Contactar por WhatsApp
+                </a>
+            </div>
+
+            <p class="text-sand-400 text-[11px] pt-6 border-t border-sand-800">© 2026 LulaDec. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Lógica de Javascript -->
+    <script>
+        // ==========================================
+        // PON AQUÍ TU NÚMERO DE WHATSAPP REAL
+        // Formato: Código de país + número (Sin espacios ni guiones)
+        // Ejemplo para México: "5215512345678"
+        // ==========================================
+        const PHONE_NUMBER = "5215512345678";
+
+        function calculateTotal() {
+            const basePrice = 349;
+            const extraMusic = document.getElementById('extraMusic').checked ? parseInt(document.getElementById('extraMusic').value) : 0;
+            const extraGallery = document.getElementById('extraGallery').checked ? parseInt(document.getElementById('extraGallery').value) : 0;
+
+            const total = basePrice + extraMusic + extraGallery;
+            document.getElementById('totalPrice').innerText = `$${total} MXN`;
+            return total;
+        }
+
+        function sendOrderWhatsApp() {
+            const eventType = document.getElementById('eventType').value;
+            const music = document.getElementById('extraMusic').checked ? "Sí (+$100 MXN)" : "No";
+            const gallery = document.getElementById('extraGallery').checked ? "Sí (+$100 MXN)" : "No";
+            const total = calculateTotal();
+
+            let text = `✨ *NUEVO PEDIDO EN LULADEC* ✨%0A%0A`;
+            text += `🎉 *Tipo de Evento:* ${encodeURIComponent(eventType)}%0A`;
+            text += `🎵 *Música de fondo:* ${encodeURIComponent(music)}%0A`;
+            text += `🖼️ *Galería de fotos:* ${encodeURIComponent(gallery)}%0A`;
+            text += `💰 *Total Estimado:* $${total} MXN%0A%0A`;
+            text += `Hola! Me gustaría iniciar el diseño de mi invitación virtual.`;
+
+            window.open(`https://wa.me/${PHONE_NUMBER}?text=${text}`, '_blank');
+        }
+    </script>
+</body>
+</html>
